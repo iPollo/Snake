@@ -139,7 +139,7 @@ public class Janela extends JFrame{
 
     public void checkEat()
     {
-        if(snake[0].SNAKE_POS_X == apple.APPLE_POS_X && snake[0].SNAKE_POS_Y == apple.APPLE_POS_Y)
+        if(snake[0].snakePosX == apple.applePosX && snake[0].snakePosY == apple.applePosY)
         {
             apple.newApple();
             newSnakeBody();
@@ -153,18 +153,18 @@ public class Janela extends JFrame{
         snakeBodyAmount++;
         System.out.println();
         for(int i = 0; i < snakeBodyAmount; i++);
-        snake[snakeBodyAmount] = new Snake(snake[snakeBodyAmount - 1].SNAKE_POS_X, snake[snakeBodyAmount - 1].SNAKE_POS_Y, snake[0].SNAKE_DIR_X, snake[0].SNAKE_DIR_Y);
+        snake[snakeBodyAmount] = new Snake(snake[snakeBodyAmount - 1].snakePosX, snake[snakeBodyAmount - 1].snakePosY, snake[0].snakeDirX, snake[0].snakeDirY);
         windowPanel.add(snake[snakeBodyAmount]);
-        System.out.println(snake[snakeBodyAmount].SNAKE_POS_X);
-        System.out.println(snake[snakeBodyAmount].SNAKE_POS_Y);
+        System.out.println(snake[snakeBodyAmount].snakePosX);
+        System.out.println(snake[snakeBodyAmount].snakePosY);
     }
 
     public void updateSnakeBody()
     {
         for(int i = snakeBodyAmount; i > 0; i--)
         {
-            snake[i].SNAKE_POS_X = snake[i-1].SNAKE_POS_X;
-            snake[i].SNAKE_POS_Y = snake[i-1].SNAKE_POS_Y;
+            snake[i].snakePosX = snake[i-1].snakePosX;
+            snake[i].snakePosY = snake[i-1].snakePosY;
             snake[i].updatePos();
         }
     }
@@ -173,7 +173,7 @@ public class Janela extends JFrame{
     {
         for(int i = snakeBodyAmount; i > 1; i--)
         {
-            if(snake[0].SNAKE_POS_X == snake[i].SNAKE_POS_X && snake[0].SNAKE_POS_Y == snake[i].SNAKE_POS_Y)
+            if(snake[0].snakePosX == snake[i].snakePosX && snake[0].snakePosY == snake[i].snakePosY)
                 endGame();
 
         }    
