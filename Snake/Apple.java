@@ -5,14 +5,12 @@ import javax.swing.JPanel;
 
 public class Apple extends JPanel {
 
-    /**
-     *
-     */
+
     private static final long serialVersionUID = -9143479096598508541L;
 
     int applePosX, applePosY;
 
-    Apple(int x, int y) {
+    Apple(int x, int y){
         applePosX = x;
         applePosY = y;
 
@@ -25,8 +23,8 @@ public class Apple extends JPanel {
 
     public void newApple() {
         setVisible(false);
-        int randomX = ThreadLocalRandom.current().nextInt(0, 49 + 1);
-        int randomY = ThreadLocalRandom.current().nextInt(0, 49 + 1);
+        int randomX = ThreadLocalRandom.current().nextInt(0, Janela.BOARD_UNITS_X);
+        int randomY = ThreadLocalRandom.current().nextInt(0, Janela.BOARD_UNITS_Y);
         applePosX = randomX;
         applePosY = randomY;
         setLocation(applePosX * Janela.BOARD_UNIT, applePosY * Janela.BOARD_UNIT);

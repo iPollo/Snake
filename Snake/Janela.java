@@ -24,10 +24,10 @@ public class Janela extends JFrame{
 
     public final static int BOARD_SIZE_X = 500;
     public final static int BOARD_SIZE_Y = 500;
-    public final static int BOARD_UNIT = 10;
+    public final static int BOARD_UNIT = 10; //Change this to increase/decrease the ratio size
     public final static int BOARD_UNITS_X = BOARD_SIZE_X / BOARD_UNIT;
     public final static int BOARD_UNITS_Y = BOARD_SIZE_X / BOARD_UNIT;
-    final int gameTickRate = 50;
+    public final static int GAME_TICK_RATE = 50;
 
     char playerLastKey = 'd';
 
@@ -132,7 +132,7 @@ public class Janela extends JFrame{
     public void startGame()
     {
         gameRunning = true;
-        timer.schedule(gametick, 0, gameTickRate);
+        timer.schedule(gametick, 0, GAME_TICK_RATE);
         loseText.setVisible(false);
         apple.newApple();
     }
